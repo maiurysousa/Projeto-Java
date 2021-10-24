@@ -1,5 +1,7 @@
 package Projeto;
 
+import java.util.Scanner;
+
 public class Formulario {
 
 	private String nome;
@@ -8,14 +10,28 @@ public class Formulario {
 	private float estatura;
 	private float peso;
 	
-	public Formulario(String nome, String genero, int idade, float estatura, float peso)
+	Scanner leia = new Scanner (System.in);		
+	
+	public Formulario()
 	{
-		super();
-		this.nome = nome;
-		this.genero = genero;
-		this.idade = idade;
-		this.estatura = estatura;
-		this.peso = peso;
+		//Construtor instanciando objeto Formulário
+	}
+	
+	public void preencher()
+	{		
+		
+		System.out.println("\nInsira o nome do paciente:");
+		nome = leia.next(); // Não aceita nome composto
+		leia.nextLine();
+		System.out.println("\nInsira o gênero do paciente:");
+		genero = leia.next();
+		System.out.println("\nInsira a idade do paciente:");
+		idade = leia.nextInt();
+		System.out.println("\nInsira a altura do paciente:");
+		estatura = leia.nextFloat();
+		System.out.println("\nInsira o peso do paciente:");
+		peso = leia.nextFloat();
+				
 	}
 
 	public void imprimirInfo() 
@@ -70,3 +86,4 @@ public class Formulario {
 	}
 	
 }
+

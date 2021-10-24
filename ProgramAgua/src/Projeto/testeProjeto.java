@@ -4,45 +4,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class testeProjeto {
-	
-	public static calculos preencher()  {
-		
-		String nome;		
-		String genero;
-		int idade;
-		float estatura;
-		float peso;
-		
-		Scanner leia = new Scanner (System.in);		
-		
-		System.out.println("\nInsira o nome do paciente:");
-		nome = leia.next();
-		leia.nextLine();
-		System.out.println("\nInsira o gênero do paciente:");
-		genero = leia.next();
-		System.out.println("\nInsira a idade do paciente:");
-		idade = leia.nextInt();
-		System.out.println("\nInsira a altura do paciente:");
-		estatura = leia.nextFloat();
-		System.out.println("\nInsira o peso do paciente:");
-		peso = leia.nextFloat();
-		
-		calculos teste = new calculos(nome,genero,idade,estatura,peso);
-		return teste;
-				
-	}
+
 
 	public static void main(String[] args) {
 		
 		
 		ArrayList<calculos> Pacientes = new ArrayList();		
 		
-		int op, cont=0, posicao=0;
-		String opb;
+		int opcao, contador=0, posicao=0, posicaoPaciente=0;
+		String op; 
 		
 		Scanner ler = new Scanner(System.in);
 		
-		System.out.println("********SEJA BEM VINDE À CLINIC GROUP 2!!!*********");
+		System.out.println("********SEJA BEM VINDE AO PROGRAM'ÁGUA !!*********");
 		
 		do
 		{
@@ -55,16 +29,19 @@ public class testeProjeto {
 			System.out.println("\n(0) Deseja sair do programa.");
 			System.out.println("\n------------------------------------------------------");
 			System.out.println("\nDigite uma opção: ");
-			op = ler.nextInt();
+			opcao = ler.nextInt();
 			
-			switch(op)
+			switch(opcao)
 			{
 			case 0:
 				System.err.println("\nFinalizando o programa...");//Imprime a mensagem com a cor vermelha			
 				
 			case 1:		
 				ler.nextLine(); //limpeza de cashes			
-				Pacientes.add(preencher());
+				Pacientes.add(new calculos());
+				Pacientes.get(posicaoPaciente).preencher();	
+				posicaoPaciente++;
+				
 				break;				
 				
 			case 2:
@@ -78,8 +55,9 @@ public class testeProjeto {
 					{
 						Pacientes.remove(lista); 
 						System.err.println("\nPaciente removido do sistema!");
+						posicaoPaciente--;
 						break;
-					}	
+					}					
 				}
 				break;				
 				
@@ -95,18 +73,18 @@ public class testeProjeto {
 				System.out.println("\n(D) Deseja alterar o gênero do paciente.");
 				System.out.println("\n------------------------------------------------------");
 				System.out.println("\nDigite uma opção: ");
-				opb = ler.nextLine();
+				op = ler.nextLine();
 				
-				while(cont<Pacientes.size()) //laço de repetição para percorrer a lista 
+				while(contador<Pacientes.size()) //laço de repetição para percorrer a lista 
 				{
-					if(Pacientes.get(cont).getNome().equals(verificar)) //condicional para verificar se o atributo pertence ao objeto Pacientes
+					if(Pacientes.get(contador).getNome().equals(verificar)) //condicional para verificar se o atributo pertence ao objeto Pacientes
 					{
-						posicao=cont;	//posiçao referente ao atributo que foi inserido				
+						posicao=contador;	//posiçao referente ao atributo que foi inserido				
 					}
-					cont++;
+					contador++;
 				}
 				
-				switch (opb)  //nova lista de opções para a opção 3
+				switch (op)  
 				{
 				case "A":
 					System.out.println("\nDigite o peso atual do paciente.");
@@ -144,14 +122,14 @@ public class testeProjeto {
 					Pacientes.get(posicao).imprimirInfo();
 					break;							
 				}
-				cont = 0;
+				contador = 0;
 				break;		
 			
 			case 4:
 				ler.nextLine();//limpeza de cashes	
 				System.out.println("\nLista de pacientes: ");
 				
-				for (int contador=0;contador<Pacientes.size(); contador++) 
+				for (contador=0;contador<Pacientes.size(); contador++) 
 				{
 					Pacientes.get(contador).imprimirInfo();
 				}				
@@ -175,7 +153,7 @@ public class testeProjeto {
 				System.err.println("\nPor favor insira uma opção válida!!!"); //Imprime mensagem de erro
 			}
 		}
-		while(op != 0);		
+		while(opcao != 0);		
 
 	}
 

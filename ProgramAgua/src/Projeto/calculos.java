@@ -2,9 +2,9 @@ package Projeto;
 
 public class calculos extends Formulario {
 
-	public calculos(String nome, String genero, int idade, float estatura, float peso)
+	public calculos()
 	{
-		super(nome,genero, idade, estatura, peso);
+		//Construtor instanciando objeto Formulário
 	}
 		
 	public void QtdAguaNecessaria() 
@@ -49,3 +49,4 @@ public class calculos extends Formulario {
 			
 	}
 }
+
