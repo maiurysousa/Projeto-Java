@@ -16,7 +16,7 @@ Elaboração de um formulário de pacientes para os profissionais da área da sa
 + Imprimir os dados de todos os pacientes que foram inseridos.
 + Mostra as informações sobre a quantidade de água diária e o IMC de um paciente cujo nome é passado no pelo usuário do programa.
 
-##  <img align="center" alt="java" height="40" src="https://cdn-icons.flaticon.com/png/512/3291/premium/3291669.png?token=exp=1635039023~hmac=2dca3f6b51afeb1c8bbdac257af211df" /> Conhecimentos requeridos no projeto
+##  <img align="center" alt="java" height="40" src="https://cdn-icons-png.flaticon.com/512/226/226777.png" /> Conhecimentos requeridos no projeto
 
 - [x] Classes, Atributos e Objetos
 - [x] Encapsulamento;
